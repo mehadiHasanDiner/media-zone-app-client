@@ -80,3 +80,7 @@ export const products = [
     ratings: 3,
   },
 ];
+
+export const getAllProducts = () => {
+  return products;
+};

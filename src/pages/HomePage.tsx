@@ -1,10 +1,13 @@
+import Banner from "@/components/ui/Banner";
+import Products from "@/components/ui/Products";
 
 const HomePage = () => {
-    return (
-        <div>
-            <h1>Home page</h1>
-        </div>
-    );
+  return (
+    <>
+      <Banner />
+      <Products />
+    </>
+  );
 };
 
 export default HomePage;
