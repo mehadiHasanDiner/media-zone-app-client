@@ -1,8 +1,28 @@
+import { useState } from "react";
+import Modal from "./Modal";
+
 const ProductCard = ({ product }: { product: any }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleShowModal = (product: any) => {
+    setSelectedProduct(product);
+    setSelectedProduct;
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null);
+    setShowModal(false);
+  };
+
   return (
-    <div>
+    <div className="relative">
+      {showModal && (
+        <Modal onClose={handleCloseModal} product={selectedProduct} />
+      )}
       <div
-        //   onClick={() => handleShowModal(product)}
+        onClick={() => handleShowModal(product)}
         className="border rounded-lg shadow-lg overflow-hidden bg-white transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col h-full"
       >
         <img
