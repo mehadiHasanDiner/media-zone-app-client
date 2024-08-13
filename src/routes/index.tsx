@@ -1,4 +1,5 @@
 import App from "@/App";
+import Cart from "@/pages/Cart";
 import HomePage from "@/pages/HomePage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path:"/cart",
+        element: <Cart />,
       },
     ],
   },
