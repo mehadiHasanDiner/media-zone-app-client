@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import appLogo from "../../assets/images/logo.png";
 import { ShoppingCart, Moon } from "lucide-react";
 import { useState } from "react";
+import { useAppSelector } from "@/redux/hooks";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const products = useAppSelector((store) => store.cart.products);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -47,7 +49,7 @@ const Header = () => {
                 <ShoppingCart size={24} />
               </Link>
               <span className="rounded-full absolute top-[-10px] left-[20px] bg-primary text-center size-[25px]">
-                2
+                {products.length}
               </span>
             </li>
 
