@@ -1,7 +1,14 @@
+import OrderSummary from "@/components/OrderSummary";
+
 const Cart = () => {
   return (
-    <div>
-      <h1>Cart</h1>
+    <div className="container mt-10 mx-auto">
+      <div className="flex lg:flex-row flex-col-reverse justify-center lg:space-x-40">
+
+        <OrderSummary />
+
+      </div>
+
     </div>
   );
 };
