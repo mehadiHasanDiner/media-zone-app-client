@@ -61,8 +61,21 @@ const Header = () => {
                 <Moon size={24} />
               </button>
             </li>
+            
+            <li>
+              <Link
+                className="rounded-lg backdrop-blur-[2px] p-1 inline-block hover:text-yellow-300"
+                to={"/login"}
+              >
+                Login
+              </Link>
+            </li>
           </ul>
         </div>
+
+        
+
+
 
         {/* Mobile Menubar Button */}
         <div className="md:hidden flex items-center">
@@ -124,7 +137,7 @@ const Header = () => {
               <ShoppingCart size={24} />
             </Link>
             <span className="rounded-full absolute top-[-10px] left-[20px] bg-primary text-center size-[25px]">
-              2
+              {products.length}
             </span>
           </li>
           <li>
@@ -134,6 +147,14 @@ const Header = () => {
             >
               <Moon size={24} />
             </button>
+          </li>
+          <li>
+            <Link
+              className="rounded-lg backdrop-blur-[2px] p-1 inline-block hover:text-yellow-300"
+              to={"/login"}
+            >
+              Login
+            </Link>
           </li>
         </ul>
       )}
