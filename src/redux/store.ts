@@ -1,15 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
-import createReducer from "./featuers/cartSlice";
-import RegisterReducer from "./featuers/registerSlice";
+import cartReducer from "./featuers/cartSlice";
+import registerReducer from "./featuers/registerSlice";
+import loginReducer from "./featuers/loginSlice";
 import { baseApi } from "./api/baseApi";
 // ...
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
-    cart: createReducer,
-    register: RegisterReducer,
+    cart: cartReducer,
+    register: registerReducer,
+    login: loginReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }).concat(
+      baseApi.middleware
+    ),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
